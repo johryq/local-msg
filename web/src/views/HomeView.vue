@@ -58,7 +58,6 @@ import { storeToRefs } from 'pinia';
 import { reactive, ref, onMounted } from 'vue';
 import { getDateTime, getShowDate } from '@/utils/DateTime';
 import { getIPApi, saveUserApi, updateListApi, sendMsgApi, syncMsgApi } from '@/server/api';
-import { all } from 'axios';
 
 const store = useStore();
 

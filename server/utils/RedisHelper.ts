@@ -1,6 +1,6 @@
 import { createClient } from 'redis';
 import { UserInfo, DbName, Msg, ReturnData, MsgList } from './type';
-
+import { EnvHelper } from './EnvHelper';
 export class RedisHelper {
   redis: any;
   constructor() {
@@ -8,9 +8,11 @@ export class RedisHelper {
   }
   init() {
     let client = createClient({
-      url: 'redis://:password@192.168.10.2:6379',
+      url: EnvHelper.redisIP,
     });
-    client.connect();
+    console.log(EnvHelper.redisIP);
+    
+    // client.connect();
     this.redis = client;
   }
 
